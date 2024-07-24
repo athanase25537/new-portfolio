@@ -235,9 +235,6 @@ div#quote div {
     z-index: -1;
 }
 
-div#quote h1 {
-    /* display: inline-block; */
-}
 
 div#quote h1:nth-child(1) {
     font-weight: 900;
