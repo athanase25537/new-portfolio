@@ -1,0 +1,502 @@
+:root {
+    --main: #1E1E1E;
+    --sec: #D9D9D9;
+    --dark: #0E0101;
+    --thir: #6F6767;
+}
+
+@font-face {
+    font-family: inter;
+    src: url('../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+/* Default Start */
+* {
+    font-family: inter, arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* Default End */
+
+/* Body Start */
+body {
+    background-color: var(--sec);
+    width: 100%;
+    overflow-x: hidden;
+}
+/* Body End */
+
+/* Header Start */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+header ul {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+header ul li {
+    list-style: none;
+    margin-right: 10px;
+    padding: 20px 0;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #1E1E1E;
+}
+/* Header End */
+
+/* Home Start */
+section#home {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+section#home h1 {
+    font-size: 7em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+section#home img {
+    width: 100%;
+    max-width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+/* Home End */
+
+/* About Start */
+section#about {
+    background-color: var(--dark);
+    color: var(--sec);
+    height: 100vh;
+}
+
+section#about h1 {
+    text-transform: uppercase;
+    font-size: 8em;
+    font-weight: 800;
+    padding: 3%;
+}
+
+section#about p{
+    position: relative;
+    right: 0;
+    width: 60%;
+    margin-left: 30%;
+    font-size: 1.2em;
+}
+/* About End */
+
+/* Skills Start */
+div#skills {
+    height: 100vh;
+    font-size: 4em;
+    color: var(--thir);
+    text-transform: uppercase;
+    position: relative;
+}
+div#skills div {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+div#skills h1:nth-child(1) {
+    font-weight: 900;
+    position: relative;
+    left: 10%;
+}
+
+div#skills h1:nth-child(2){
+    font-weight: 900;
+    color: var(--sec);
+    color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--thir);
+    position: relative;
+    left: 30%;
+}
+
+div#skills h1:nth-child(3){
+    font-weight: 900;
+    position: relative;
+    left: 15%;
+}
+/* Skills End */
+
+/* Education Start */
+section#education{
+    height: auto;
+}
+
+section#education h1{
+    text-transform: uppercase;
+    font-size: 8em;
+    font-weight: 800;
+    padding: 2%;
+    color: var(--main);
+}
+
+section#education .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%; 
+    position: relative;
+    color: var(--main);
+    margin: 3%;
+}
+
+section#education .container::before{
+    content: '';
+    width: 3px;
+    height: 90%;
+    background-color: var(--main);
+    position: absolute;
+    left: 52px;
+    top: 2%;
+}
+
+section#education .container .content {
+    margin-left: 7%;
+    border-bottom: 1px solid var(--main);
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+section#education .container .content h2 {
+    position: relative;
+    width: 200px;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+section#education .container .content h2::before {
+    content: '';
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: var(--main);
+    position: absolute;
+    left: -30px;
+    transform: translateY(50%);
+}
+
+section#education .container .content h3 {
+    font-weight: 700;
+    font-size: 1.2em;
+    text-transform: capitalize;
+}
+
+section#education .container .content h4 {
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+/* Education End */
+
+/* Quote Start */
+div#quote {
+    /* height: auto; */
+    font-size: 5em;
+    color: var(--thir);
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+div#quote div {
+    position: absolute;
+    top: 50%;
+    background-color: var(--dark);
+    height: 50%;
+    width: 100%;
+    z-index: -1;
+}
+
+div#quote h1 {
+    /* display: inline-block; */
+}
+
+div#quote h1:nth-child(1) {
+    font-weight: 900;
+    transform: rotate(5deg);
+    position: relative;
+    top: 150px;
+    left: 200px;
+}
+
+div#quote h1:nth-child(2){
+    font-weight: 900;
+    color: var(--dark);
+    position: relative;
+    top: -300px;
+    left: 550px;
+    transform: rotate(-20deg);
+}
+
+div#quote h1:nth-child(3){
+    font-weight: 900;
+    position: relative;
+    top: -250px;
+    left: 500px;
+    transform: rotate(-15deg);
+    color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--thir);
+}
+
+div#quote h1:nth-child(4){
+    font-weight: 900;
+    position: relative;
+    left: 300px;
+    transform: rotate(10deg);
+}
+
+div#quote h1:nth-child(5){
+    font-weight: 900;
+    position: relative;
+    top: -100px;
+    left: 200px;
+    transform: rotate(-10deg);
+    color: var(--sec);
+}
+
+div#quote h1:nth-child(6){
+    font-weight: 900;
+    position: relative;
+    left: 15%;
+    color: var(--dark);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--sec);
+    transform: rotate(2deg);
+}
+/* Quote End */
+
+/* Experiences Start */
+section#experiences{
+    height: auto;
+    color: var(--sec);
+    background-color: var(--dark);
+    padding-bottom: 5%;
+}
+
+section#experiences h1{
+    text-transform: uppercase;
+    font-size: 8em;
+    font-weight: 800;
+    padding: 2%;
+}
+
+section#experiences .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%; 
+    position: relative;
+    margin: 3%;
+}
+
+section#experiences .container::after {
+    content: '';
+    width: 3px;
+    height: 90%;
+    background-color: var(--sec);
+    position: absolute;
+    right: 52px;
+    top: 2%;
+}
+
+section#experiences .container .content {
+    margin-right: 7%;
+    border-bottom: 1px solid var(--sec);
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+section#experiences .container .content h2 {
+    position: relative;
+    font-weight: 800;
+    text-transform: capitalize;
+    width: 200px;
+    text-align: right;
+}
+
+section#experiences .container .content h2::after {
+    content: '';
+    width: 13px;
+    height: 13px;
+    background-color: var(--sec);
+    position: absolute;
+    right: -30px;
+    top: 30%;
+    transform: rotate(45deg);
+}
+
+section#experiences .container .content h3 {
+    font-weight: 700;
+    font-size: 1.2em;
+    text-transform: capitalize;
+}
+
+section#experiences .container .content h4 {
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+/* Experiences End */
+
+/* Technologies Start */
+section#technologies {
+    padding: 15% 0;
+}
+
+section#technologies h1{
+    text-transform: uppercase;
+    font-size: 8em;
+    font-weight: 800;
+    padding: 2%;
+}
+
+section#technologies .tech {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+section#technologies .tech div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+section#technologies i {
+    font-size: 8em;
+}
+/* Technologies End */
+
+/* Projects Start */
+section#projects {
+    color: var(--sec);
+    background-color: var(--dark);
+    padding: 15% 0;
+}
+
+section#projects h1 {
+    text-transform: uppercase;
+    font-size: 8em;
+    font-weight: 800;
+    padding: 2%;
+}
+
+section#projects .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+section#projects .container .text {
+    width: 50%;
+    padding: 5%;
+    padding-right: 0;
+}
+
+section#projects .container .text h2 {
+    font-size: 6em;
+    color: var(--thir);
+    text-transform: uppercase;
+    font-weight: 800;
+    transition: all .3s ease-in-out;
+}
+
+section#projects .container .text h2:hover {
+    background-color: var(--thir);
+    color: var(--sec);
+    cursor: pointer;
+}
+
+section#projects .container .text h2.active {
+    color: var(--sec);
+}
+
+section#projects .container .text h2.active:hover {
+    background: none;
+}
+
+section#projects .container .text p {
+    font-size: 1.2em;
+    margin: 3% 0;
+}
+
+section#projects .container .text p a {
+    color: var(--sec);
+    font-size: 2em;
+    margin-right: 4%;
+}
+
+section#projects .container .img {
+    background-color: var(--sec);
+    border-radius: 20px;
+    width: 40%;
+    margin-right: 5%;
+}
+/* Projects End */
+
+/* Contacts Start */
+section#contacts {
+    padding: 15% 0;
+}
+
+section#contacts h1 {
+    text-transform: uppercase;
+    font-size: 8em;
+    font-weight: 800;
+    padding: 2%;
+}
+
+section#contacts div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+
+section#contacts div i{
+    font-size: 7em;
+    transition: transform .3s ease-in;
+}
+
+section#contacts div i:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+/* Contacts End */
