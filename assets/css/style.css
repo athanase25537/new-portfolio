@@ -61,7 +61,7 @@ section#home {
 }
 
 section#home h1 {
-    font-size: 7em;
+    font-size: 8vw;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -91,7 +91,7 @@ section#about {
 
 section#about h1 {
     text-transform: uppercase;
-    font-size: 8em;
+    font-size: 9vw;
     font-weight: 800;
     padding: 3%;
 }
@@ -108,7 +108,7 @@ section#about p{
 /* Skills Start */
 div#skills {
     height: 100vh;
-    font-size: 4em;
+    font-size: 5vw;
     color: var(--thir);
     text-transform: uppercase;
     position: relative;
@@ -149,7 +149,7 @@ section#education{
 
 section#education h1{
     text-transform: uppercase;
-    font-size: 8em;
+    font-size: 9vw;
     font-weight: 800;
     padding: 2%;
     color: var(--main);
@@ -165,16 +165,6 @@ section#education .container{
     margin: 3%;
 }
 
-section#education .container::before{
-    content: '';
-    width: 3px;
-    height: 90%;
-    background-color: var(--main);
-    position: absolute;
-    left: 52px;
-    top: 2%;
-}
-
 section#education .container .content {
     margin-left: 7%;
     border-bottom: 1px solid var(--main);
@@ -187,7 +177,7 @@ section#education .container .content {
 
 section#education .container .content h2 {
     position: relative;
-    width: 200px;
+    width: 300px;
     font-weight: 800;
     text-transform: capitalize;
 }
@@ -203,9 +193,22 @@ section#education .container .content h2::before {
     transform: translateY(50%);
 }
 
+section#education .container .content h2::after {
+    content: '';
+    width: 3px;
+    height: calc(100%*6);
+    background-color: var(--main);
+    position: absolute;
+    left: -25px;
+    top: 7px;
+}
+
+section#education .container .content .last::after {
+    height: calc(100%*4);
+}
 section#education .container .content h3 {
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 2.2vw;
     text-transform: capitalize;
 }
 
@@ -218,8 +221,7 @@ section#education .container .content h4 {
 
 /* Quote Start */
 div#quote {
-    /* height: auto; */
-    font-size: 5em;
+    font-size: 6vw;
     color: var(--thir);
     text-transform: uppercase;
     position: relative;
@@ -301,7 +303,7 @@ section#experiences{
 
 section#experiences h1{
     text-transform: uppercase;
-    font-size: 8em;
+    font-size: 9vw;
     font-weight: 800;
     padding: 2%;
 }
@@ -313,16 +315,6 @@ section#experiences .container{
     width: 80%; 
     position: relative;
     margin: 3%;
-}
-
-section#experiences .container::after {
-    content: '';
-    width: 3px;
-    height: 90%;
-    background-color: var(--sec);
-    position: absolute;
-    right: 52px;
-    top: 2%;
 }
 
 section#experiences .container .content {
@@ -356,6 +348,20 @@ section#experiences .container .content h2::after {
     transform: rotate(45deg);
 }
 
+section#experiences .container .content h2::before {
+    content: '';
+    width: 3px;
+    height: calc(100%*5);
+    background-color: var(--sec);
+    position: absolute;
+    right: -25px;
+    top: 7px;
+}
+
+section#experiences .container .content .last::before {
+    height: calc(100%*3);
+}
+
 section#experiences .container .content h3 {
     font-weight: 700;
     font-size: 1.2em;
@@ -376,7 +382,7 @@ section#technologies {
 
 section#technologies h1{
     text-transform: uppercase;
-    font-size: 8em;
+    font-size: 9vw;
     font-weight: 800;
     padding: 2%;
 }
@@ -398,7 +404,21 @@ section#technologies .tech div {
 }
 
 section#technologies i {
-    font-size: 8em;
+    font-size: 9vw;
+    animation: zoomInOut 3s infinite;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);  
+    }
+
+    50% {
+        transform: scale(1.05);  
+    }
+    100% {
+        transform: scale(1);  
+    }
 }
 /* Technologies End */
 
@@ -411,7 +431,7 @@ section#projects {
 
 section#projects h1 {
     text-transform: uppercase;
-    font-size: 8em;
+    font-size: 9vw;
     font-weight: 800;
     padding: 2%;
 }
@@ -427,6 +447,9 @@ section#projects .container .text {
     padding-right: 0;
 }
 
+section#projects .container .text span {
+    display: none;
+}
 section#projects .container .text h2 {
     font-size: 6em;
     color: var(--thir);
@@ -460,11 +483,36 @@ section#projects .container .text p a {
     margin-right: 4%;
 }
 
+section#projects .container .text p a i {
+    transition: transform .3s ease-in-out;
+}
+
+section#projects .container .text p a i:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
 section#projects .container .img {
     background-color: var(--sec);
     border-radius: 20px;
     width: 40%;
     margin-right: 5%;
+    position: relative;
+}
+
+section#projects .container .img img {
+    object-fit: fill;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 20px;
+}
+
+section#projects .container .img img.active {
+    opacity: 1;
 }
 /* Projects End */
 
@@ -475,7 +523,7 @@ section#contacts {
 
 section#contacts h1 {
     text-transform: uppercase;
-    font-size: 8em;
+    font-size: 9vw;
     font-weight: 800;
     padding: 2%;
 }

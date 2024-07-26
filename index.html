@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Athanase - Portfolio</title>
     <link rel="stylesheet" href="assets/css/all.min.css">
+    <script src="assets/js/app.js" defer></script>
 </head>
 <body>
     <header>
@@ -64,7 +65,7 @@
             </div>
 
             <div class="content">
-                <h2>2020</h2>
+                <h2 class="last">2020</h2>
                 <h3>Baccalaureate series C</h3>
                 <h4>LPM Manakara</h4>
                 <p>Mention well</p>
@@ -98,7 +99,7 @@
             </div>
 
             <div class="content">
-                <h2>2021</h2>
+                <h2 class="last">2021</h2>
                 <h3>VIVETIC Group</h3>
                 <h4>internship observation</h4>
             </div>
@@ -130,15 +131,24 @@
                 <h2 class="active">portfolio</h2>
                 <h2>quizapp</h2>
                 <h2>fanorona</h2>
-
-                <p>This portfolio is a website to introduce myself. 
+                <p id="contentProject">This portfolio is a website to introduce myself. 
                     It is made with HTML5 CSS3 and JS.</p>
+                <span id="portfolio">This portfolio is a website to introduce myself. 
+                    It is made with HTML5 CSS3 and JS.</span>
+                <span id="quizapp">This quizapp is a website to increase knowleadge. 
+                    It is made with HTML5 CSS3 PHP and Ajax.</span>
+                <span id="fanorona">This fanorona is a website malagasy game. 
+                    It is made with HTML5 CSS3 and JS.</span>
                 <p>
                     <a href="#"><i class="fa-brands fa-github"></i></a>
                     <a href="#"><i class="fa-solid fa-link"></i></a>
                 </p>
             </div>
-            <div class="img"></div>
+            <div class="img">
+                <img class="portfolio active" src="assets/img/portfolio.png" alt="portfolio">
+                <img class="fanorona" src="assets/img/fanoronier.jpg" alt="fanorona">
+                <img class="quizapp" src="assets/img/quiz.png" alt="quiz">
+            </div>
         </div>
     </section>
 
