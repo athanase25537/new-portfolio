@@ -62,12 +62,44 @@ section#home {
 
 section#home h1 {
     font-size: 8vw;
+    display: inline-block;
+    /* border: 1px solid black; */
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
     z-index: -1;
+    width: 100%;
+    overflow: hidden;
+    width: 100%;
+    height: 140px;
 }
+
+.marquee {
+    position: absolute;
+    display: block;
+    margin: auto auto;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 100%;
+    height: 100%;
+}
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 10s linear infinite;
+}
+.marquee2 span {
+    animation-delay: 5s;
+}
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
 
 section#home img {
     width: 100%;
