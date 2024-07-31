@@ -1,3 +1,19 @@
+// dynamic navigation
+const links = document.querySelectorAll('header ul li a');
+links.forEach(link => {
+    link.addEventListener('click', function() {
+        if(!this.parentNode.classList.contains('active')) {
+            // remove class active on active content
+            activeElement = document.querySelector('header ul li.active');
+            activeElement.classList.remove('active');
+            
+            // add class active on the new content
+            this.parentNode.classList.add('active');
+        }
+    })
+});
+
+
 // content dynamic project
 const contentProject = document.getElementById('contentProject');
 const titles = document.querySelectorAll('#projects h2');
@@ -26,3 +42,21 @@ titles.forEach(h2 => {
         }
    }) 
 });
+
+// observer
+const elements = document.querySelectorAll('section, body > div');
+console.log(elements);
+const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            entry.target.classList.toggle('show', entry.isIntersecting);
+        })
+    }, {
+        threshold: .5
+    }
+);
+
+elements.forEach(
+    element => {
+        observer.observe(element);
+    }
+)

@@ -11,6 +11,9 @@
 }
 
 /* Default Start */
+html {
+    scroll-behavior: smooth;
+}
 * {
     font-family: inter, arial, sans-serif;
     box-sizing: border-box;
@@ -43,13 +46,26 @@ header ul {
 
 header ul li {
     list-style: none;
-    margin-right: 10px;
+    margin-right: 30px;
     padding: 20px 0;
+    position: relative;
+}
+
+header ul li.active a::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 100%;
+    background-color: var(--dark);
 }
 
 header ul li a {
     text-decoration: none;
     color: #1E1E1E;
+    position: relative;
 }
 /* Header End */
 
@@ -126,6 +142,12 @@ section#about h1 {
     font-size: 9vw;
     font-weight: 800;
     padding: 3%;
+    transform: translateX(-100%);
+    transition: transform .5s ease-in;
+}
+
+section#about.show h1 {
+    transform: translateX(0);
 }
 
 section#about p{
@@ -134,6 +156,14 @@ section#about p{
     width: 60%;
     margin-left: 30%;
     font-size: 1.2em;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 1s ease-in, opacity 1s ease-in;
+}
+
+section#about.show p {
+    opacity: 1;
+    transform: translateX(0);
 }
 /* About End */
 
@@ -145,16 +175,23 @@ div#skills {
     text-transform: uppercase;
     position: relative;
 }
+
 div#skills div {
     position: absolute;
     left: 0%;
     top: 50%;
     transform: translateY(-50%);
 }
+
+div#skills h1 {
+    transition: transform 1s ease-in-out;
+}
+
 div#skills h1:nth-child(1) {
     font-weight: 900;
     position: relative;
     left: 10%;
+    transform: translateX(-150%);
 }
 
 div#skills h1:nth-child(2){
@@ -165,20 +202,31 @@ div#skills h1:nth-child(2){
     -webkit-text-stroke-color: var(--thir);
     position: relative;
     left: 30%;
+    transform: translateX(170%);
 }
 
 div#skills h1:nth-child(3){
     font-weight: 900;
     position: relative;
     left: 15%;
+    transform: translateX(-170%);
+}
+
+div#skills.show h1 {
+    transform: translateX(0);
 }
 /* Skills End */
 
 /* Education Start */
 section#education{
     height: auto;
+    opacity: 0;
+    transition: opacity .5s ease-in
 }
 
+section#education.show {
+    opacity: 1;
+}
 section#education h1{
     text-transform: uppercase;
     font-size: 9vw;
@@ -275,6 +323,11 @@ div#quote h1:nth-child(1) {
     transform: rotate(5deg);
     position: relative;
     top: 150px;
+    left: -500px;
+    transition: left .5s ease-in;
+}
+
+div#quote.show h1:nth-child(1) {
     left: 200px;
 }
 
@@ -285,43 +338,69 @@ div#quote h1:nth-child(2){
     top: -300px;
     left: 550px;
     transform: rotate(-20deg);
+    opacity: 0;
+    transition: opacity .5s ease-in;
+}
+
+div#quote.show h1:nth-child(2){
+    opacity: 1;
 }
 
 div#quote h1:nth-child(3){
     font-weight: 900;
     position: relative;
     top: -250px;
-    left: 500px;
+    left: 1500px;
     transform: rotate(-15deg);
     color: transparent;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: var(--thir);
+    transition: left .5s ease-in;
+}
+
+div#quote.show h1:nth-child(3){
+    left: 500px;
 }
 
 div#quote h1:nth-child(4){
     font-weight: 900;
     position: relative;
-    left: 300px;
+    left: -900px;
     transform: rotate(10deg);
+    transition: left .5s ease-in;
+}
+
+div#quote.show h1:nth-child(4){
+    left: 300px;
 }
 
 div#quote h1:nth-child(5){
     font-weight: 900;
     position: relative;
     top: -100px;
-    left: 200px;
+    left: 2000px;
     transform: rotate(-10deg);
+    transition: left .5s ease-in;
     color: var(--sec);
+}
+
+div#quote.show h1:nth-child(5){
+    left: 200px;
 }
 
 div#quote h1:nth-child(6){
     font-weight: 900;
     position: relative;
-    left: 15%;
+    left: -150%;
     color: var(--dark);
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: var(--sec);
+    transition: left .5s ease-in;
     transform: rotate(2deg);
+}
+
+div#quote.show h1:nth-child(6){
+    left: 15%;
 }
 /* Quote End */
 
@@ -338,6 +417,12 @@ section#experiences h1{
     font-size: 9vw;
     font-weight: 800;
     padding: 2%;
+    opacity: 0;
+    transition: opacity .5s ease-in;
+}
+
+section#experiences.show h1 {
+    opacity: 1;
 }
 
 section#experiences .container{
@@ -346,7 +431,13 @@ section#experiences .container{
     justify-content: space-around;
     width: 80%; 
     position: relative;
+    opacity: 0;
+    transition: opacity .5s ease-in;
     margin: 3%;
+}
+
+section#experiences.show .container {
+    opacity: 1;
 }
 
 section#experiences .container .content {
@@ -409,7 +500,7 @@ section#experiences .container .content h4 {
 
 /* Technologies Start */
 section#technologies {
-    padding: 15% 0;
+    padding-bottom: 15%;
 }
 
 section#technologies h1{
@@ -417,6 +508,12 @@ section#technologies h1{
     font-size: 9vw;
     font-weight: 800;
     padding: 2%;
+    transform: translateX(-120%);
+    transition: transform .5s ease-in;
+}
+
+section#technologies.show h1 {
+    transform: translateX(0);
 }
 
 section#technologies .tech {
@@ -433,6 +530,20 @@ section#technologies .tech div {
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    transition: transform 1s ease-in;
+}
+
+section#technologies .tech div:nth-child(1) {
+    transform: translateX(200%);
+}
+
+section#technologies .tech div:nth-child(2) {
+    transform: translateX(-200%);
+    transition-delay: .5s;
+}
+
+section#technologies.show .tech div {
+    transform: translateX(0);
 }
 
 section#technologies i {
@@ -458,7 +569,7 @@ section#technologies i {
 section#projects {
     color: var(--sec);
     background-color: var(--dark);
-    padding: 15% 0;
+    padding-bottom: 15%;
 }
 
 section#projects h1 {
@@ -466,11 +577,23 @@ section#projects h1 {
     font-size: 9vw;
     font-weight: 800;
     padding: 2%;
+    opacity: 0;
+    transition: opacity .5s ease-in;
+}
+
+section#projects.show h1 {
+    opacity: 1;
 }
 
 section#projects .container {
     display: flex;
     justify-content: space-between;
+    opacity: 0;
+    transition: opacity .5s ease-in;
+}
+
+section#projects.show .container {
+    opacity: 1;
 }
 
 section#projects .container .text {
@@ -550,7 +673,7 @@ section#projects .container .img img.active {
 
 /* Contacts Start */
 section#contacts {
-    padding: 15% 0;
+    padding-bottom: 15%;
 }
 
 section#contacts h1 {
@@ -558,6 +681,12 @@ section#contacts h1 {
     font-size: 9vw;
     font-weight: 800;
     padding: 2%;
+    transform: translateX(-200%);
+    transition: transform .5s ease-in;
+}
+
+section#contacts.show h1 {
+    transform: translateX(0);
 }
 
 section#contacts div {
@@ -565,6 +694,12 @@ section#contacts div {
     justify-content: center;
     align-items: center;
     gap: 3%;
+    transform: translateX(300%);
+    transition: transform .5s ease-in;
+}
+
+section#contacts.show div {
+    transform: translateX(0);
 }
 
 section#contacts div i{
