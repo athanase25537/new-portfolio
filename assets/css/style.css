@@ -1,8 +1,11 @@
 :root {
-    --main: #1E1E1E;
-    --sec: #D9D9D9;
-    --dark: #0E0101;
-    --thir: #6F6767;
+    --main: #0784DE;
+    --sec: #898932;
+    --re: #DE0A07;
+    --thir: #FFFFFF;
+    --ina: #084F77;
+    --dd: #661615;
+    --dark: #1E1E1E;
 }
 
 @font-face {
@@ -24,7 +27,7 @@ html {
 
 /* Body Start */
 body {
-    background-color: var(--sec);
+    background-color: var(--thir);
     width: 100%;
     overflow-x: hidden;
 }
@@ -32,14 +35,20 @@ body {
 
 /* Header Start */
 header {
-    position: sticky;
-    top: 0;
-    left: 0;
+    position: fixed;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
     z-index: 3;
+    width: 50px;
+    border-radius: 20px;
+    background-color: #d9d9d9b0;
+    box-shadow: 0 0 3px 3px rgba(46, 45, 45, 0.884);
 }
 
 header ul {
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     width: 100%;
 }
@@ -47,27 +56,42 @@ header ul {
 header ul li {
     list-style: none;
     margin-right: 30px;
-    padding: 20px 0;
+    padding: 15px 0;
     position: relative;
+    width: 100%;
 }
 
-header ul li.active a::after {
+header ul li::after {
     content: '';
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    top: -5px;
-    left: 100%;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: var(--dark);
+}
+
+header ul li.active::after {
+    background-color: var(--main);
 }
 
 header ul li a {
     text-decoration: none;
     color: #1E1E1E;
     position: relative;
+    opacity: 0;
 }
 /* Header End */
+
+/* Banner Start */
+.banner {
+    width: 100%;
+    height: 30vh;
+}
+/* Banner End */
 
 /* Home Start */
 section#home {
@@ -79,7 +103,6 @@ section#home {
 section#home h1 {
     font-size: 8vw;
     display: inline-block;
-    /* border: 1px solid black; */
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
@@ -88,6 +111,7 @@ section#home h1 {
     overflow: hidden;
     width: 100%;
     height: 140px;
+    color: var(--re);
 }
 
 .marquee {
@@ -132,8 +156,8 @@ section#home img {
 
 /* About Start */
 section#about {
-    background-color: var(--dark);
-    color: var(--sec);
+    background-color: var(--main);
+    color: var(--thir);
     height: 100vh;
 }
 
@@ -171,7 +195,7 @@ section#about.show p {
 div#skills {
     height: 100vh;
     font-size: 5vw;
-    color: var(--thir);
+    color: var(--re);
     text-transform: uppercase;
     position: relative;
 }
@@ -196,10 +220,10 @@ div#skills h1:nth-child(1) {
 
 div#skills h1:nth-child(2){
     font-weight: 900;
-    color: var(--sec);
+    color: transparent;
     color: transparent;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: var(--thir);
+    -webkit-text-stroke-color: var(--re);
     position: relative;
     left: 30%;
     transform: translateX(170%);
@@ -232,7 +256,7 @@ section#education h1{
     font-size: 9vw;
     font-weight: 800;
     padding: 2%;
-    color: var(--main);
+    color: var(--sec);
 }
 
 section#education .container{
@@ -241,13 +265,13 @@ section#education .container{
     justify-content: space-around;
     width: 80%; 
     position: relative;
-    color: var(--main);
+    color: var(--dark);
     margin: 3%;
 }
 
 section#education .container .content {
     margin-left: 7%;
-    border-bottom: 1px solid var(--main);
+    border-bottom: 1px solid var(--sec);
     padding-bottom: 2%;
     margin-bottom: 2%;
     display: flex;
@@ -267,7 +291,7 @@ section#education .container .content h2::before {
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background-color: var(--main);
+    background-color: var(--sec);
     position: absolute;
     left: -30px;
     transform: translateY(50%);
@@ -277,7 +301,7 @@ section#education .container .content h2::after {
     content: '';
     width: 3px;
     height: calc(100%*6);
-    background-color: var(--main);
+    background-color: var(--sec);
     position: absolute;
     left: -25px;
     top: 7px;
@@ -302,7 +326,7 @@ section#education .container .content h4 {
 /* Quote Start */
 div#quote {
     font-size: 6vw;
-    color: var(--thir);
+    color: var(--re);
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
@@ -311,7 +335,7 @@ div#quote {
 div#quote div {
     position: absolute;
     top: 50%;
-    background-color: var(--dark);
+    background-color: var(--main);
     height: 50%;
     width: 100%;
     z-index: -1;
@@ -323,20 +347,20 @@ div#quote h1:nth-child(1) {
     transform: rotate(5deg);
     position: relative;
     top: 150px;
-    left: -500px;
+    left: -100%;
     transition: left .5s ease-in;
 }
 
 div#quote.show h1:nth-child(1) {
-    left: 200px;
+    left: 8%;
 }
 
 div#quote h1:nth-child(2){
     font-weight: 900;
-    color: var(--dark);
+    color: var(--dd);
     position: relative;
     top: -300px;
-    left: 550px;
+    left: 30%;
     transform: rotate(-20deg);
     opacity: 0;
     transition: opacity .5s ease-in;
@@ -354,12 +378,12 @@ div#quote h1:nth-child(3){
     transform: rotate(-15deg);
     color: transparent;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: var(--thir);
+    -webkit-text-stroke-color: var(--re);
     transition: left .5s ease-in;
 }
 
 div#quote.show h1:nth-child(3){
-    left: 500px;
+    left: 40%;
 }
 
 div#quote h1:nth-child(4){
@@ -368,6 +392,9 @@ div#quote h1:nth-child(4){
     left: -900px;
     transform: rotate(10deg);
     transition: left .5s ease-in;
+    color: var(--thir);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--re);
 }
 
 div#quote.show h1:nth-child(4){
@@ -381,7 +408,7 @@ div#quote h1:nth-child(5){
     left: 2000px;
     transform: rotate(-10deg);
     transition: left .5s ease-in;
-    color: var(--sec);
+    color: var(--re);
 }
 
 div#quote.show h1:nth-child(5){
@@ -392,9 +419,9 @@ div#quote h1:nth-child(6){
     font-weight: 900;
     position: relative;
     left: -150%;
-    color: var(--dark);
+    color: transparent;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: var(--sec);
+    -webkit-text-stroke-color: var(--re);
     transition: left .5s ease-in;
     transform: rotate(2deg);
 }
@@ -407,8 +434,8 @@ div#quote.show h1:nth-child(6){
 /* Experiences Start */
 section#experiences{
     height: auto;
-    color: var(--sec);
-    background-color: var(--dark);
+    color: var(--thir);
+    background-color: var(--main);
     padding-bottom: 5%;
 }
 
@@ -442,7 +469,7 @@ section#experiences.show .container {
 
 section#experiences .container .content {
     margin-right: 7%;
-    border-bottom: 1px solid var(--sec);
+    border-bottom: 1px solid var(--thir);
     padding-bottom: 2%;
     margin-bottom: 2%;
     margin-left: 5%;
@@ -464,7 +491,7 @@ section#experiences .container .content h2::after {
     content: '';
     width: 13px;
     height: 13px;
-    background-color: var(--sec);
+    background-color: var(--thir);
     position: absolute;
     right: -30px;
     top: 30%;
@@ -475,7 +502,7 @@ section#experiences .container .content h2::before {
     content: '';
     width: 3px;
     height: calc(100%*5);
-    background-color: var(--sec);
+    background-color: var(--thir);
     position: absolute;
     right: -25px;
     top: 7px;
@@ -510,6 +537,7 @@ section#technologies h1{
     padding: 2%;
     transform: translateX(-120%);
     transition: transform .5s ease-in;
+    color: var(--sec);
 }
 
 section#technologies.show h1 {
@@ -549,6 +577,7 @@ section#technologies.show .tech div {
 section#technologies i {
     font-size: 9vw;
     animation: zoomInOut 3s infinite;
+    color: var(--dark);
 }
 
 @keyframes zoomInOut {
@@ -567,8 +596,8 @@ section#technologies i {
 
 /* Projects Start */
 section#projects {
-    color: var(--sec);
-    background-color: var(--dark);
+    color: var(--thir);
+    background-color: var(--main);
     padding-bottom: 15%;
 }
 
@@ -607,7 +636,7 @@ section#projects .container .text span {
 }
 section#projects .container .text h2 {
     font-size: 6em;
-    color: var(--thir);
+    color: var(--ina);
     text-transform: uppercase;
     font-weight: 800;
     transition: all .3s ease-in-out;
@@ -620,7 +649,7 @@ section#projects .container .text h2:hover {
 }
 
 section#projects .container .text h2.active {
-    color: var(--sec);
+    color: var(--thir);
 }
 
 section#projects .container .text h2.active:hover {
@@ -640,6 +669,7 @@ section#projects .container .text p a {
 
 section#projects .container .text p a i {
     transition: transform .3s ease-in-out;
+    color: var(--thir);
 }
 
 section#projects .container .text p a i:hover {
@@ -674,6 +704,7 @@ section#projects .container .img img.active {
 /* Contacts Start */
 section#contacts {
     padding-bottom: 15%;
+    height: 100vh;
 }
 
 section#contacts h1 {
@@ -712,3 +743,13 @@ section#contacts div i:hover{
     transform: scale(1.05);
 }
 /* Contacts End */
+
+/* Responsive Start */
+@media screen and (max-width: 900px) {
+    section#about p {
+        margin: 0;
+        padding: 0 3%;
+        width: 100%;
+    }
+}
+/* Responsive End */

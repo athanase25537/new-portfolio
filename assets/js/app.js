@@ -49,9 +49,11 @@ console.log(elements);
 const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             entry.target.classList.toggle('show', entry.isIntersecting);
+            if(entry.isIntersecting) observer.unobserve(entry.target);
         })
+
     }, {
-        threshold: .5
+        threshold: .3
     }
 );
 
@@ -60,3 +62,23 @@ elements.forEach(
         observer.observe(element);
     }
 )
+
+addEventListener('scroll', function () {
+    elements.forEach(
+        element => {
+            let t = element.getBoundingClientRect().top
+            let h = element.getBoundingClientRect().height;
+            id = element.getAttribute('id');
+            if(t<=0 && t>=-h && id!=null) {
+                let newActive = this.document.querySelector(`header ul li a[href="#${id}"]`);
+                if(newActive!=null) {
+                    let lastActive = this.document.querySelector('header ul li.active');
+                    lastActive.classList.remove('active');
+                    newActive = newActive.parentElement;
+                    newActive.classList.add('active');
+                }
+                console.log('newActive :>> ', newActive);
+            }
+        }
+    )
+})
