@@ -30,7 +30,7 @@ gitHub.setAttribute('href', gitLinksProjects[`${id}`]);
 
 const webLinksProjects = {
     portfolio: 'https://portfolio-athanase.netlify.app/',
-    fanorona: '#',
+    fanorona: 'https://fanorona.netlify.app/',
     quizapp: '#'
 }
 let linkWeb = document.querySelector('#projects p a:last-child');
