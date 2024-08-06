@@ -30,10 +30,15 @@ body {
     background-color: var(--thir);
     width: 100%;
     overflow-x: hidden;
+    position: relative;
 }
 /* Body End */
 
 /* Header Start */
+#menu {
+    display: none;
+}
+
 header {
     position: fixed;
     top: 50%;
@@ -42,8 +47,9 @@ header {
     z-index: 3;
     width: 50px;
     border-radius: 20px;
+    transition: width .3s ease-in-out;
     background-color: #d9d9d9b0;
-    box-shadow: 0 0 3px 3px rgba(46, 45, 45, 0.884);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 }
 
 header ul {
@@ -72,6 +78,7 @@ header ul li::after {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--dark);
+    transition: opacity .3s ease-in;
 }
 
 header ul li.active::after {
@@ -83,6 +90,29 @@ header ul li a {
     color: #1E1E1E;
     position: relative;
     opacity: 0;
+}
+
+header ul li.active a {
+    color: var(--main);
+}
+
+header ul li a:hover {
+    color: var(--main);
+}
+
+header:hover {
+    width: 150px;
+    padding-left: 10px;
+}
+
+header:hover ul li::after {
+    opacity: 0;
+}
+
+header:hover ul li a {
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+    transition-delay: .3s;
 }
 /* Header End */
 
@@ -160,7 +190,7 @@ section#about {
     color: var(--thir);
     height: auto;
     /* max-height: 100vh; */
-    padding: 3% 0;
+    padding: 5% 0;
 }
 
 section#about h1 {
@@ -593,6 +623,12 @@ section#technologies i {
     font-size: 9vw;
     animation: zoomInOut 3s infinite;
     color: var(--dark);
+    transition: color .3s ease-in-out;
+}
+
+section#technologies i:hover {
+    color: #0784DE;
+    cursor: pointer;
 }
 
 @keyframes zoomInOut {
@@ -659,7 +695,7 @@ section#projects .container .text h2 {
 
 section#projects .container .text h2:hover {
     background-color: var(--thir);
-    color: var(--sec);
+    color: var(--main);
     cursor: pointer;
 }
 
@@ -684,12 +720,13 @@ section#projects .container .text p a {
 
 section#projects .container .text p a i {
     transition: transform .3s ease-in-out;
-    color: var(--thir);
+    color: var(--ina);
 }
 
 section#projects .container .text p a i:hover {
     cursor: pointer;
     transform: scale(1.05);
+    color: var(--thir);
 }
 
 section#projects .container .img {
@@ -719,7 +756,8 @@ section#projects .container .img img.active {
 /* Contacts Start */
 section#contacts {
     padding-bottom: 15%;
-    height: 100vh;
+    height: auto;
+    color: var(--sec);
 }
 
 section#contacts h1 {
@@ -749,12 +787,14 @@ section#contacts.show div {
 }
 
 section#contacts div i{
-    font-size: 7em;
-    transition: transform .3s ease-in;
+    font-size: 8vw;
+    color: var(--dark);
+    transition: transform .3s ease-in, color .3s ease-in;
 }
 
 section#contacts div i:hover{
     cursor: pointer;
+    color: var(--main);
     transform: scale(1.05);
 }
 /* Contacts End */
@@ -765,6 +805,94 @@ section#contacts div i:hover{
         margin: 0;
         padding: 0 3%;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: translateY(0);
+        height: 100vh;
+        backdrop-filter: blur(3px);
+        z-index: 1;
+        border-radius: 0;
+        box-shadow: none;
+        margin-left: 100%;
+        transition: margin .3s ease-in;
+    }
+
+    header.showmenu {
+        margin-left: 0;
+    }
+
+    header:hover {
+        padding: 0;
+        width: 100%;
+    }
+
+    header ul {
+        height: 100%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header ul li {
+        text-align: center;
+    }
+
+    header ul li a {
+        opacity: 1;
+    }
+
+    header ul li::after {
+        display: none;
+    }
+
+
+    #menu {
+        position: fixed;
+        display: block;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        flex-direction: column;
+        top: 10px;
+        right: 10px;
+        justify-content: space-between;
+        z-index: 2;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+    }
+
+    #menu span {
+        display: inline-block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--ina);
+        transition: all .3s ease-in;
+    }
+
+    #menu.showmenu span:nth-child(1) {
+        position: absolute;
+        top: 50%;
+        transform: rotate(45deg);
+    }
+
+    #menu.showmenu span:nth-child(2) {
+        position: absolute;
+        top: 50%;
+        transform: translateX(100%);
+
+    }
+
+    #menu.showmenu span:nth-child(3) {
+        position: absolute;
+        top: 50%;
+        transform: rotate(-45deg);
     }
 }
 /* Responsive End */

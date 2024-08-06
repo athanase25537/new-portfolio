@@ -45,7 +45,6 @@ titles.forEach(h2 => {
 
 // observer
 const elements = document.querySelectorAll('section, body > div');
-console.log(elements);
 const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             entry.target.classList.toggle('show', entry.isIntersecting);
@@ -77,8 +76,15 @@ addEventListener('scroll', function () {
                     newActive = newActive.parentElement;
                     newActive.classList.add('active');
                 }
-                console.log('newActive :>> ', newActive);
             }
         }
     )
+})
+
+// menu animation
+const menu = document.querySelector('#menu');
+const header = document.querySelector('header');
+menu.addEventListener('click', function(e) {
+    this.classList.toggle('showmenu');
+    header.classList.toggle('showmenu');
 })
