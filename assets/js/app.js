@@ -17,7 +17,25 @@ links.forEach(link => {
 // content dynamic project
 const contentProject = document.getElementById('contentProject');
 const titles = document.querySelectorAll('#projects h2');
+let gitHub = document.querySelector('#projects p a i');
+gitHub = gitHub.parentElement;
+const gitLinksProjects = {
+    portfolio: 'https://github.com/athanase25537/new-portfolio',
+    fanorona: 'https://github.com/athanase25537/fanorona',
+    quizapp: 'https://github.com/athanase25537/quiz'
+}
 
+let id = 'portfolio';
+gitHub.setAttribute('href', gitLinksProjects[`${id}`]);
+
+const webLinksProjects = {
+    portfolio: 'https://portfolio-athanase.netlify.app/',
+    fanorona: '#',
+    quizapp: '#'
+}
+let linkWeb = document.querySelector('#projects p a:last-child');
+linkWeb.setAttribute('href', webLinksProjects[`${id}`]);
+console.log('linkWeb :>> ', linkWeb);
 titles.forEach(h2 => {
     h2.addEventListener('click', function() {
         if(!this.classList.contains('active')) {
@@ -38,6 +56,10 @@ titles.forEach(h2 => {
             img.classList.remove('active');
             newImg = document.querySelector(`.${id}`);
             newImg.classList.add('active');
+
+            // change links
+            gitHub.setAttribute('href', gitLinksProjects[`${id}`]);
+            linkWeb.setAttribute('href', webLinksProjects[`${id}`]);
 
         }
    }) 
