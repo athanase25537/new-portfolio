@@ -35,7 +35,6 @@ const webLinksProjects = {
 }
 let linkWeb = document.querySelector('#projects p a:last-child');
 linkWeb.setAttribute('href', webLinksProjects[`${id}`]);
-console.log('linkWeb :>> ', linkWeb);
 titles.forEach(h2 => {
     h2.addEventListener('click', function() {
         if(!this.classList.contains('active')) {
