@@ -102,7 +102,7 @@ header ul li a:hover {
 
 header:hover {
     width: 150px;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 header:hover ul li::after {
@@ -189,7 +189,6 @@ section#about {
     background-color: var(--main);
     color: var(--thir);
     height: auto;
-    /* max-height: 100vh; */
     padding: 5% 0;
 }
 
@@ -212,7 +211,7 @@ section#about p{
     right: 0;
     width: 80%;
     margin-left: 10%;
-    font-size: 2vw;
+    font-size: 1.4vw;
     transform: translateX(100%);
     opacity: 0;
     transition: transform 1s ease-in, opacity 1s ease-in;
@@ -317,7 +316,7 @@ section#education .container .content h2 {
     width: 300px;
     font-weight: 800;
     text-transform: capitalize;
-    font-size: 3.5vw;
+    font-size: 2vw;
 }
 
 section#education .container .content h2::before {
@@ -346,18 +345,18 @@ section#education .container .content .last::after {
 }
 section#education .container .content h3 {
     font-weight: 700;
-    font-size: 2.3vw;
+    font-size: 1.7vw;
     text-transform: capitalize;
 }
 
 section#education .container .content h4 {
-    font-size: 2vw;
+    font-size: 1.4vw;
     font-weight: 500;
     text-transform: capitalize;
 }
 
 section#education .container .content p {
-    font-size: 1.7vw;
+    font-size: 1.2vw;
 }
 /* Education End */
 
@@ -526,7 +525,7 @@ section#experiences .container .content h2 {
     font-weight: 800;
     text-transform: capitalize;
     width: 200px;
-    font-size: 3.5vw;
+    font-size: 2vw;
     text-align: right;
 }
 
@@ -557,16 +556,14 @@ section#experiences .container .content .last::before {
 
 section#experiences .container .content h3 {
     font-weight: 700;
-    font-size: 1.2em;
-    font-size: 2.3vw;
+    font-size: 1.7vw;
     text-transform: capitalize;
 }
 
 section#experiences .container .content h4 {
-    font-size: 1.2em;
     font-weight: 500;
     text-transform: capitalize;
-    font-size: 1.7vw;
+    font-size: 1.4vw;
 }
 /* Experiences End */
 
@@ -805,7 +802,37 @@ section#contacts div i:hover{
         margin: 0;
         padding: 0 3%;
         width: 100%;
+        font-size: 2vw;
     }
+
+    section#education .container .content h2 {
+        font-size: 3.5vw;
+    }
+
+    section#education .container .content h3 {
+        font-size: 3.2vw;
+    }
+
+    section#education .container .content h4 {
+        font-size: 2.9vw;
+    }
+
+    section#education .container .content p {
+        font-size: 2.3vw;
+    }
+
+    section#experiences .container .content h2 {
+        font-size: 3.5vw;
+    }
+
+    section#experiences .container .content h3 {
+        font-size: 3.2vw;
+    }
+
+    section#experiences .container .content h4 {
+        font-size: 2.9vw;
+    }
+
 }
 
 @media screen and (max-width: 800px) {
