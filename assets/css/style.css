@@ -89,7 +89,7 @@ header ul li a {
 /* Banner Start */
 .banner {
     width: 100%;
-    height: 30vh;
+    height: 10vw;
 }
 /* Banner End */
 
@@ -158,7 +158,9 @@ section#home img {
 section#about {
     background-color: var(--main);
     color: var(--thir);
-    height: 100vh;
+    height: auto;
+    /* max-height: 100vh; */
+    padding: 3% 0;
 }
 
 section#about h1 {
@@ -166,6 +168,7 @@ section#about h1 {
     font-size: 9vw;
     font-weight: 800;
     padding: 3%;
+    padding-top: 0;
     transform: translateX(-100%);
     transition: transform .5s ease-in;
 }
@@ -177,9 +180,9 @@ section#about.show h1 {
 section#about p{
     position: relative;
     right: 0;
-    width: 60%;
-    margin-left: 30%;
-    font-size: 1.2em;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 2vw;
     transform: translateX(100%);
     opacity: 0;
     transition: transform 1s ease-in, opacity 1s ease-in;
@@ -193,7 +196,7 @@ section#about.show p {
 
 /* Skills Start */
 div#skills {
-    height: 100vh;
+    height: 60vw;
     font-size: 5vw;
     color: var(--re);
     text-transform: uppercase;
@@ -284,6 +287,7 @@ section#education .container .content h2 {
     width: 300px;
     font-weight: 800;
     text-transform: capitalize;
+    font-size: 3.5vw;
 }
 
 section#education .container .content h2::before {
@@ -312,14 +316,18 @@ section#education .container .content .last::after {
 }
 section#education .container .content h3 {
     font-weight: 700;
-    font-size: 2.2vw;
+    font-size: 2.3vw;
     text-transform: capitalize;
 }
 
 section#education .container .content h4 {
-    font-size: 1.2em;
+    font-size: 2vw;
     font-weight: 500;
     text-transform: capitalize;
+}
+
+section#education .container .content p {
+    font-size: 1.7vw;
 }
 /* Education End */
 
@@ -330,6 +338,7 @@ div#quote {
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
+    height: 100vw;
 }
 
 div#quote div {
@@ -345,8 +354,8 @@ div#quote div {
 div#quote h1:nth-child(1) {
     font-weight: 900;
     transform: rotate(5deg);
-    position: relative;
-    top: 150px;
+    position: absolute;
+    top: 15%;
     left: -100%;
     transition: left .5s ease-in;
 }
@@ -358,9 +367,9 @@ div#quote.show h1:nth-child(1) {
 div#quote h1:nth-child(2){
     font-weight: 900;
     color: var(--dd);
-    position: relative;
-    top: -300px;
-    left: 30%;
+    position: absolute;
+    top: 10%;
+    left: 35%;
     transform: rotate(-20deg);
     opacity: 0;
     transition: opacity .5s ease-in;
@@ -372,8 +381,8 @@ div#quote.show h1:nth-child(2){
 
 div#quote h1:nth-child(3){
     font-weight: 900;
-    position: relative;
-    top: -250px;
+    position: absolute;
+    top: 20%;
     left: 1500px;
     transform: rotate(-15deg);
     color: transparent;
@@ -383,41 +392,44 @@ div#quote h1:nth-child(3){
 }
 
 div#quote.show h1:nth-child(3){
-    left: 40%;
+    left: 45%;
 }
 
 div#quote h1:nth-child(4){
     font-weight: 900;
-    position: relative;
+    position: absolute;
+    top: 40%;
     left: -900px;
     transform: rotate(10deg);
+    transition: left .5s ease-in;
+    color: var(--re);
+
+}
+
+div#quote.show h1:nth-child(4){
+    left: 30%;
+}
+
+div#quote h1:nth-child(5){
+    font-weight: 900;
+    position: absolute;
+    top: 60%;
+    left: 2000px;
+    transform: rotate(-10deg);
     transition: left .5s ease-in;
     color: var(--thir);
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: var(--re);
 }
 
-div#quote.show h1:nth-child(4){
-    left: 300px;
-}
-
-div#quote h1:nth-child(5){
-    font-weight: 900;
-    position: relative;
-    top: -100px;
-    left: 2000px;
-    transform: rotate(-10deg);
-    transition: left .5s ease-in;
-    color: var(--re);
-}
-
 div#quote.show h1:nth-child(5){
-    left: 200px;
+    left: 20%;
 }
 
 div#quote h1:nth-child(6){
     font-weight: 900;
-    position: relative;
+    position: absolute;
+    top: 80%;
     left: -150%;
     color: transparent;
     -webkit-text-stroke-width: 3px;
@@ -484,6 +496,7 @@ section#experiences .container .content h2 {
     font-weight: 800;
     text-transform: capitalize;
     width: 200px;
+    font-size: 3.5vw;
     text-align: right;
 }
 
@@ -515,6 +528,7 @@ section#experiences .container .content .last::before {
 section#experiences .container .content h3 {
     font-weight: 700;
     font-size: 1.2em;
+    font-size: 2.3vw;
     text-transform: capitalize;
 }
 
@@ -522,6 +536,7 @@ section#experiences .container .content h4 {
     font-size: 1.2em;
     font-weight: 500;
     text-transform: capitalize;
+    font-size: 1.7vw;
 }
 /* Experiences End */
 
@@ -626,8 +641,8 @@ section#projects.show .container {
 }
 
 section#projects .container .text {
-    width: 50%;
-    padding: 5%;
+    width: 45%;
+    padding: 3%;
     padding-right: 0;
 }
 
@@ -635,7 +650,7 @@ section#projects .container .text span {
     display: none;
 }
 section#projects .container .text h2 {
-    font-size: 6em;
+    font-size: 7vw;
     color: var(--ina);
     text-transform: uppercase;
     font-weight: 800;
@@ -657,7 +672,7 @@ section#projects .container .text h2.active:hover {
 }
 
 section#projects .container .text p {
-    font-size: 1.2em;
+    font-size: 2vw;
     margin: 3% 0;
 }
 
@@ -680,8 +695,8 @@ section#projects .container .text p a i:hover {
 section#projects .container .img {
     background-color: var(--sec);
     border-radius: 20px;
-    width: 40%;
-    margin-right: 5%;
+    width: 50%;
+    margin-right: 3%;
     position: relative;
 }
 
