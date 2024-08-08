@@ -1,7 +1,7 @@
 :root {
     --main: #0784DE;
     --sec: #898932;
-    --re: #F5735B;
+    --re: #898932;
     --thir: #FFFFFF;
     --ina: #084F77;
     --dd: #661615;
@@ -396,7 +396,7 @@ div#quote.show h1:nth-child(1) {
 
 div#quote h1:nth-child(2){
     font-weight: 900;
-    color: var(--dd);
+    color: var(--dark);
     position: absolute;
     top: 10%;
     left: 35%;
@@ -462,8 +462,7 @@ div#quote h1:nth-child(6){
     top: 80%;
     left: -150%;
     color: transparent;
-    -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: var(--re);
+    color: var(--dark);
     transition: left .5s ease-in;
     transform: rotate(2deg);
 }
