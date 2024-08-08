@@ -801,16 +801,33 @@ section#contacts div i:hover{
     position: fixed;
     bottom: -100%;
     right: 15%;
-    transition: bottom 1s ease-in;
+    transition: bottom 1s ease-in, transform .1s ease-in-out;;
+}
+
+.goUp:hover {
+    transform: scale(1.05);
 }
 
 .goUp a {
-    color: var(--sec);
     font-size: 5vw;
 }
 
+
+
+.goUp a i {
+    color: var(--sec);
+    border-radius: 50%;
+    transition: color .3s ease-in, background .3s ease-in;
+
+}
+
+.goUp:hover a i {
+    background-color: var(--sec);
+    color: var(--thir);
+}
+
 .goUp.showElem {
-    bottom: 5%;
+    bottom: 15%;
 }
 /* GoUp End */
 
