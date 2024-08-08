@@ -796,6 +796,24 @@ section#contacts div i:hover{
 }
 /* Contacts End */
 
+/* GoUp Start */
+.goUp {
+    position: fixed;
+    bottom: -100%;
+    right: 15%;
+    transition: bottom 1s ease-in;
+}
+
+.goUp a {
+    color: var(--sec);
+    font-size: 5vw;
+}
+
+.goUp.showElem {
+    bottom: 5%;
+}
+/* GoUp End */
+
 /* Responsive Start */
 @media screen and (max-width: 900px) {
     section#about p {

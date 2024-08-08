@@ -83,12 +83,19 @@ elements.forEach(
     }
 )
 
+// Header animation on scroll
+let goUp = document.querySelector('.goUp');
 addEventListener('scroll', function () {
     elements.forEach(
         element => {
             let t = element.getBoundingClientRect().top
             let h = element.getBoundingClientRect().height;
             id = element.getAttribute('id');
+            
+            if(t<=0 && t>=-h/4) {
+                if(id!='home') goUp.classList.add('showElem');
+                else goUp.classList.remove('showElem');
+            }
             if(t<=0 && t>=-h && id!=null) {
                 let newActive = this.document.querySelector(`header ul li a[href="#${id}"]`);
                 if(newActive!=null) {
