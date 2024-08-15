@@ -6,6 +6,10 @@
 },5000);*/
 
 let strongA = document.querySelector('#home p strong');
+const cursorA = document.querySelector('#home p strong');
+setInterval(() => {
+    cursorA.classList.toggle('showa');
+},250)
 typingAnimation(strongA, strongA.innerText);
 
 function typingAnimation(container, text) {
@@ -35,9 +39,9 @@ function typingAnimation(container, text) {
             container = document.querySelector('#home p strong');
             setTimeout(() => {
                 typingAnimation(container, text);
-            }, 1000);
+            }, 3000);
         }
-    }, 500)
+    }, 150)
 
 }
 // dynamic navigation

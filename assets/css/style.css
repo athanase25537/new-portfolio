@@ -150,28 +150,14 @@ section#home p strong {
 section#home p strong::after {
     content: '.';
     background-color: var(--sec);
-    width: 3px;
+    width: 2px;
     height: auto;
-    animation: cliniote 1s infinite;
+    animation: cliniote 5s infinite;
+    opacity: 0;
 }
 
-
-@keyframes cliniote {
-    0% {
-        opacity: 1;
-    }
-
-    5% {
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
+section#home p strong.showa::after {
+    opacity: 1;
 }
 
 section#home p strong span {
@@ -179,13 +165,35 @@ section#home p strong span {
 }
 
 section#home button {
-    padding: 15px 8px;
+    padding: 15px 10px;
+    margin-top: 3%;
     background-color: transparent;
     border: 1px solid var(--sec);
     color: var(--sec);
     border-radius: 10px;
-    font-size: 1.3vw;
+    font-size: 2vw;
+    position: relative;
+    /* transition-delay: .3s; */
+}
 
+section#home button::before {
+    content: '';
+    width: 0;
+    background-color: var(--sec);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 10px;
+    transition: width .5s ease-in-out;
+    z-index: -1;
+}
+
+section#home button:hover {
+    color: var(--thir);
+}
+section#home button:hover::before {
+    width: 100%;
 }
 
 
