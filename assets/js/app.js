@@ -1,3 +1,45 @@
+
+/*setInterval(function () {
+    spanAnime.innerText = textStrong;
+    if(textStrong == 'Developer Fullstack') textStrong = 'ANDRIAMASY Marc Athanase';
+    else textStrong = 'Developer Fullstack';
+},5000);*/
+
+let strongA = document.querySelector('#home p strong');
+typingAnimation(strongA, strongA.innerText);
+
+function typingAnimation(container, text) {
+    // Home animation
+    container.innerText = '';
+    let spansA = [];
+    let max = text.length;
+    for(let i=0; i<max; i++){
+        let span = document.createElement('span');
+        span.innerText = text[i];
+        if(span.textContent == ' ') {
+            span.style.width = '5px';
+        }
+
+        spansA[i] = span
+
+    }
+
+
+    let i = 0;
+    setInterval(function () {
+        container.appendChild(spansA[i]);
+        i++;
+        if(spansA[i]==undefined) {
+            if(text == 'ANDRIAMASY Athanase Marc') text = 'Developer Fullstack';
+            else text = 'ANDRIAMASY Athanase Marc';
+            container = document.querySelector('#home p strong');
+            setTimeout(() => {
+                typingAnimation(container, text);
+            }, 1000);
+        }
+    }, 500)
+
+}
 // dynamic navigation
 const links = document.querySelectorAll('header ul li a');
 links.forEach(link => {

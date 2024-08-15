@@ -1,5 +1,5 @@
 :root {
-    --main: #0784DE;
+    --main: #03164f;
     --sec: #898932;
     --re: #898932;
     --thir: #FFFFFF;
@@ -83,7 +83,7 @@ header ul li::after {
 }
 
 header ul li.active::after {
-    background-color: var(--main);
+    background-color: var(--sec);
 }
 
 header ul li a {
@@ -94,7 +94,7 @@ header ul li a {
 }
 
 header ul li.active a {
-    color: var(--main);
+    color: var(--sec);
 }
 
 header ul li a:hover {
@@ -129,58 +129,70 @@ section#home {
     width: 100%;
     height: 100vh;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: hidden;
+    padding: 0 3%;
+    font-size: 2.5vw;
 }
 
-section#home h1 {
-    font-size: 8vw;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    z-index: -1;
-    width: 100%;
-    overflow: hidden;
-    width: 100%;
-    height: 140px;
-    color: var(--re);
+
+section#home p {
+    color: var(--dark);
+}
+section#home p strong {
+    color: var(--sec);
+    font-size: 3vw;
+    font-weight: 500;
 }
 
-.marquee {
-    position: absolute;
-    display: block;
-    margin: auto auto;
-    white-space: nowrap;
-    overflow: hidden;
-    min-width: 100%;
-    height: 100%;
+section#home p strong::after {
+    content: '.';
+    background-color: var(--sec);
+    width: 3px;
+    height: auto;
+    animation: cliniote 1s infinite;
 }
-.marquee span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 10s linear infinite;
-}
-.marquee2 span {
-    animation-delay: 5s;
-}
-@keyframes marquee {
+
+
+@keyframes cliniote {
     0% {
-        transform: translate(0, 0);
+        opacity: 1;
     }
+
+    5% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
     100% {
-        transform: translate(-100%, 0);
+        opacity: 1;
     }
+}
+
+section#home p strong span {
+    display: inline-block;
+}
+
+section#home button {
+    padding: 15px 8px;
+    background-color: transparent;
+    border: 1px solid var(--sec);
+    color: var(--sec);
+    border-radius: 10px;
+    font-size: 1.3vw;
+
 }
 
 
 section#home img {
-    width: 100%;
+    width: 50%;
+    height: auto;
     max-width: 800px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    z-index: -1;
     object-fit: cover;
 }
 /* Home End */
@@ -447,9 +459,9 @@ div#quote h1:nth-child(5){
     left: 2000px;
     transform: rotate(-10deg);
     transition: left .5s ease-in;
-    color: var(--thir);
+    color: var(--dark);
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: var(--re);
+    -webkit-text-stroke-color: var(--thir);
 }
 
 div#quote.show h1:nth-child(5){
@@ -462,7 +474,7 @@ div#quote h1:nth-child(6){
     top: 80%;
     left: -150%;
     color: transparent;
-    color: var(--dark);
+    color: var(--thir);
     transition: left .5s ease-in;
     transform: rotate(2deg);
 }
@@ -717,7 +729,7 @@ section#projects .container .text p a {
 
 section#projects .container .text p a i {
     transition: transform .3s ease-in-out;
-    color: var(--ina);
+    color: var(--sec);
 }
 
 section#projects .container .text p a i:hover {
@@ -934,7 +946,7 @@ section#contacts div i:hover{
         display: inline-block;
         width: 100%;
         height: 3px;
-        background-color: var(--ina);
+        background-color: var(--sec);
         transition: all .3s ease-in;
     }
 
