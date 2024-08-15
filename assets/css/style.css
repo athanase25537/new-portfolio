@@ -32,7 +32,67 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+
+body.notload section,
+body.notload > div,
+body.notload header {
+    opacity: 0;
+}
+
+body.notload .animation {
+    opacity: 1;
+}
+body section,
+body div {
+    opacity: 1;
+}
 /* Body End */
+
+/* Animation Start */
+.animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--sec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity .7s ease-out;
+}
+
+.animation h1 {
+    text-align: center;
+    font-size: 15vw;
+    color: var(--thir);
+    position: relative;
+}
+
+.animation h1 div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.animation h1 div span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: var(--dark);
+}
+
+.animation h1 div span.tempo {
+    background-color: var(--thir);
+}
+/* Animation End */
 
 /* Header Start */
 #menu {
@@ -191,6 +251,7 @@ section#home button::before {
 
 section#home button:hover {
     color: var(--thir);
+    cursor: pointer;
 }
 section#home button:hover::before {
     width: 100%;

@@ -1,9 +1,44 @@
+// on load animation
+document.querySelector('body').classList.add('notload');
 
-/*setInterval(function () {
-    spanAnime.innerText = textStrong;
-    if(textStrong == 'Developer Fullstack') textStrong = 'ANDRIAMASY Marc Athanase';
-    else textStrong = 'Developer Fullstack';
-},5000);*/
+let div = document.createElement('div');
+div.classList.add('animation');
+
+let h1 = document.createElement('h1');
+h1.textContent = 'N';
+let span = document.createElement('span');
+let span1 = document.createElement('span');
+let span2 = document.createElement('span');
+
+let div2 = document.createElement('div');
+div2.appendChild(span);
+div2.appendChild(span1);
+div2.appendChild(span2);
+
+h1.appendChild(div2);
+div.appendChild(h1);
+document.querySelector('body').appendChild(div);
+const spansAn = document.querySelectorAll('.animation h1 span');
+i = 0;
+setInterval(() => {
+    spansAn[i].classList.add('tempo');
+    setTimeout(() => {
+        spansAn[i].classList.remove('tempo');
+        console.log('i :>> ', i);
+    }, 1000);
+    i++;
+    i %= 3;
+}, 1000);
+
+addEventListener('load', () => {
+    setTimeout(() => {
+        div.style.opacity = 0;
+        setTimeout(() => {
+            div.style.display = 'none';
+        } , 500)
+        document.querySelector('body').classList.remove('notload')
+    }, 5000);
+});
 
 let strongA = document.querySelector('#home p strong');
 const cursorA = document.querySelector('#home p strong');
@@ -30,12 +65,13 @@ function typingAnimation(container, text) {
 
 
     let i = 0;
-    setInterval(function () {
+    a = setInterval(function () {
         container.appendChild(spansA[i]);
         i++;
         if(spansA[i]==undefined) {
-            if(text == 'ANDRIAMASY Athanase Marc') text = 'Developer Fullstack';
-            else text = 'ANDRIAMASY Athanase Marc';
+            clearInterval(a);
+            if(text == 'ANDRIAMASY Athanase') text = 'Developer Fullstack';
+            else text = 'ANDRIAMASY Athanase';
             container = document.querySelector('#home p strong');
             setTimeout(() => {
                 typingAnimation(container, text);
@@ -162,3 +198,4 @@ menu.addEventListener('click', function(e) {
     this.classList.toggle('showmenu');
     header.classList.toggle('showmenu');
 })
+
