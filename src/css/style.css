@@ -201,19 +201,20 @@ section#home p strong span {
     display: inline-block;
 }
 
-section#home button {
+section#home a {
     padding: 15px 10px;
     margin-top: 3%;
     background-color: transparent;
     border: 1px solid var(--sec);
+    text-decoration: none;
     color: var(--sec);
     border-radius: 10px;
     font-size: 2vw;
+    display: inline-block;
     position: relative;
-    /* transition-delay: .3s; */
 }
 
-section#home button::before {
+section#home a::before {
     content: '';
     width: 0;
     background-color: var(--sec);
@@ -226,11 +227,11 @@ section#home button::before {
     z-index: -1;
 }
 
-section#home button:hover {
+section#home a:hover {
     color: var(--thir);
     cursor: pointer;
 }
-section#home button:hover::before {
+section#home a:hover::before {
     width: 100%;
 }
 
