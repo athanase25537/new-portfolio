@@ -53,6 +53,7 @@ body div {
     position: fixed;
     top: 0;
     left: 0;
+    opacity: 1;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -64,34 +65,10 @@ body div {
     transition: opacity .7s ease-out;
 }
 
-.animation h1 {
-    text-align: center;
-    font-size: 15vw;
-    color: var(--thir);
-    position: relative;
+.animation.hide {
+    opacity: 0;
 }
 
-.animation h1 div {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 5px;
-}
-
-.animation h1 div span {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    display: inline-block;
-    background-color: var(--dark);
-}
-
-.animation h1 div span.tempo {
-    background-color: var(--thir);
-}
 /* Animation End */
 
 /* Header Start */

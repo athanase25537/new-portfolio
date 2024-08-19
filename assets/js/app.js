@@ -1,43 +1,35 @@
-// on load animation
 document.querySelector('body').classList.add('notload');
 
 let div = document.createElement('div');
 div.classList.add('animation');
 
-let h1 = document.createElement('h1');
-h1.textContent = 'N';
-let span = document.createElement('span');
-let span1 = document.createElement('span');
-let span2 = document.createElement('span');
+div.innerHTML = '<svg width="230" height="201" viewBox="0 0 230 201" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M97.1372 185.834C97.1372 185.834 90.4536 105.977 97.1372 63.8303C103.821 21.6838 126.736 15.7684 151.56 15.029C176.384 14.2896 201.209 27.5991 210.757 63.8303C220.304 100.062 210.757 185.834 210.757 185.834" stroke="white" stroke-width="29" stroke-linecap="round"/><path d="M17.9705 185.834C17.9705 185.834 11.2869 105.977 17.9705 63.8303C24.6541 21.6838 47.569 15.7684 72.3933 15.029C97.2176 14.2896 122.042 27.5991 131.59 63.8303C141.137 100.062 131.59 185.834 131.59 185.834" stroke="white" stroke-width="29" stroke-linecap="round"/></svg>';
 
-let div2 = document.createElement('div');
-div2.appendChild(span);
-div2.appendChild(span1);
-div2.appendChild(span2);
-
-h1.appendChild(div2);
-div.appendChild(h1);
 document.querySelector('body').appendChild(div);
-const spansAn = document.querySelectorAll('.animation h1 span');
-i = 0;
-setInterval(() => {
-    spansAn[i].classList.add('tempo');
-    setTimeout(() => {
-        spansAn[i].classList.remove('tempo');
-        console.log('i :>> ', i);
-    }, 1000);
-    i++;
-    i %= 3;
-}, 1000);
 
+// preload animation
+let interval = 411;
+let svg = document.querySelector('.animation svg');
+// svg.style.strokeDashoffset = interval;
+svg.style.strokeDasharray = interval;
+
+setInterval(() => {
+    svg.style.strokeDashoffset = interval;
+    interval--;
+
+    if(interval<0) interval = 411;
+}, 5)
+
+// on load animation
 addEventListener('load', () => {
     setTimeout(() => {
-        div.style.opacity = 0;
-        setTimeout(() => {
-            div.style.display = 'none';
-        } , 500)
-        document.querySelector('body').classList.remove('notload')
-    }, 5000);
+        let div = document.querySelector('.animation')
+        div.classList.add('hide');
+        div.addEventListener('transitionend', () => {
+            document.body.removeChild(div);
+        })
+        document.body.classList.remove('notload');
+    }, 3000);
 });
 
 let strongA = document.querySelector('#home p strong');
