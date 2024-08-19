@@ -1,8 +1,8 @@
 :root {
     --main: #03164f;
     --sec: #898932;
-    --re: #898932;
-    --thir: #FFFFFF;
+    --re: #0784DE;
+    --thir: #F7F7F7;
     --ina: #084F77;
     --dd: #661615;
     --dark: #1E1E1E;
@@ -287,7 +287,7 @@ section#about.show p {
 div#skills {
     height: 60vw;
     font-size: 5vw;
-    color: var(--re);
+    color: var(--sec);
     text-transform: uppercase;
     position: relative;
 }
@@ -315,7 +315,7 @@ div#skills h1:nth-child(2){
     color: transparent;
     color: transparent;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: var(--re);
+    -webkit-text-stroke-color: var(--sec);
     position: relative;
     left: 30%;
     transform: translateX(170%);
@@ -423,7 +423,7 @@ section#education .container .content p {
 /* Quote Start */
 div#quote {
     font-size: 6vw;
-    color: var(--re);
+    color: var(--sec);
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
@@ -476,7 +476,7 @@ div#quote h1:nth-child(3){
     transform: rotate(-15deg);
     color: transparent;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: var(--re);
+    -webkit-text-stroke-color: var(--sec);
     transition: left .5s ease-in;
 }
 
@@ -491,7 +491,7 @@ div#quote h1:nth-child(4){
     left: -900px;
     transform: rotate(10deg);
     transition: left .5s ease-in;
-    color: var(--re);
+    color: var(--sec);
 
 }
 
@@ -683,7 +683,7 @@ section#technologies i {
 }
 
 section#technologies i:hover {
-    color: #0784DE;
+    color: var(--re);
     cursor: pointer;
 }
 
